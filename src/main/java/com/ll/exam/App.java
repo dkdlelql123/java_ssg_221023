@@ -44,6 +44,28 @@ public class App {
 
 
                 case "삭제":
+                    System.out.println("삭제할 명언의 번호를 입력해주세요.");
+                    String searchNumber = sc.nextLine().trim();
+
+                    if(searchNumber == null || "".equals(searchNumber) ){
+                        System.out.println("id를 입력해주세요.");
+                        continue;
+                    }
+
+                    WiseSaying findWS = null;
+
+                    for(WiseSaying ws_ : wiseSayings){
+                        if(ws_.number == Integer.parseInt(searchNumber)){
+                            findWS = ws_;
+                        }
+                    }
+
+                    if(findWS != null){
+                        wiseSayings.remove(findWS.number - 1);
+                        System.out.println(findWS.number+"번째 명언이 삭제되었습니다.");
+                        System.out.println(wiseSayings.size()+"개의 명언이 남았습니다.");
+                    }
+
                     break;
 
                 case "종료":
