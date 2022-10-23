@@ -16,6 +16,14 @@ public class App {
             String str = sc.nextLine().toString();
 
             switch(str){
+                case "등록":
+                    System.out.println("명언 : ");
+                    String content = sc.nextLine().toString();
+                    System.out.println("작가 : ");
+                    String author = sc.nextLine().toString();
+                    System.out.println("1번째 명언이 완료되었습니다.");
+                    break;
+
                 case "종료":
                     break outer;
             }
