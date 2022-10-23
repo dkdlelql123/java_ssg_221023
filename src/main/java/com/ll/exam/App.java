@@ -24,7 +24,10 @@ public class App {
                     System.out.println("작가 : ");
                     String author = sc.nextLine().toString();
                     int id = ++lastId;
-                    System.out.println(id+"번째 명언이 완료되었습니다.");
+
+                    WiseSaying ws = new WiseSaying(id, content, author);
+                    System.out.println(ws);
+
                     break;
 
                 case "종료":
