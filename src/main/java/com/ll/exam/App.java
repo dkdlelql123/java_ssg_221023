@@ -1,5 +1,6 @@
 package com.ll.exam;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -10,6 +11,7 @@ public class App {
 
         // 가장 마지막 글의 명언글 번호
         int lastId = 0;
+        ArrayList<WiseSaying> wiseSayings = new ArrayList<>();
 
         outer:
         while(true){
@@ -26,8 +28,22 @@ public class App {
                     int id = ++lastId;
 
                     WiseSaying ws = new WiseSaying(id, content, author);
-                    System.out.println(ws);
+                    wiseSayings.add(ws);
+                    System.out.println(id+"번째 명언이 작성되었습니다.");
+                    break;
 
+                case "목록":
+                    System.out.println("번호 / 명언 / 작가");
+                    System.out.println("==================");
+
+                    for (int i = wiseSayings.size() -1; i >= 0; i-- ){
+                        WiseSaying ws_ = wiseSayings.get(i);
+                        System.out.printf("%d %s %s \n", ws_.number, ws_.content, ws_.author);
+                    }
+                    break;
+
+
+                case "삭제":
                     break;
 
                 case "종료":
