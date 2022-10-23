@@ -6,8 +6,10 @@ public class App {
     public void run() {
         System.out.println("-- 명언 SSG --");
 
-
         Scanner sc = new Scanner(System.in);
+
+        // 가장 마지막 글의 명언글 번호
+        int lastId = 0;
 
         outer:
         while(true){
@@ -21,7 +23,8 @@ public class App {
                     String content = sc.nextLine().toString();
                     System.out.println("작가 : ");
                     String author = sc.nextLine().toString();
-                    System.out.println("1번째 명언이 완료되었습니다.");
+                    int id = ++lastId;
+                    System.out.println(id+"번째 명언이 완료되었습니다.");
                     break;
 
                 case "종료":
